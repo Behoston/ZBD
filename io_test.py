@@ -8,7 +8,8 @@ class FileManager:
 
     def __init__(self, device='.'):
         self.device = device
-        self.block_size = os.stat(self.device).st_blksize
+        # self.block_size = os.stat(self.device).st_blksize
+        self.block_size = 8 * 1024  # 8KB
         self.tmp = os.path.join(self.device, 'tmp_zdb')
         self.prepare()
 
